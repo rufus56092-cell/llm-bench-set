@@ -35,6 +35,22 @@ IQ2_XS quantisation, 131072-token window, int8 KV cache.
 Three runs per case, 78 runs total; three unscored (two truncated at the token
 cap, one produced no text).
 
+### Run-to-run variance
+
+These numbers move between runs, and the direction matters:
+
+- a repeat of the same quality suite scored 3.85 over 71 tasks instead of 3.76
+  over 75. The higher average is **not** a better run: four tool-use cases came
+  back with an empty answer and were excluded rather than scored zero, so the
+  weakest category shrank from 12 tasks to 8 and stopped pulling the mean down.
+  Treat a rising score with a falling task count as suspicious, not as progress.
+- the session bench found 7 defects on one run, 6 on another and 5 on the third,
+  with the same code and prompt. The misses differ per run, so read that bench as
+  "5-7 of 12" rather than a fixed figure.
+
+A single run of anything here is an anecdote. Two runs that disagree by more than
+the variance above mean the configuration changed, not that the model got better.
+
 The two weak categories are informative rather than surprising. **Math** at 3.00
 is a formatting problem more than a reasoning one: the model solves the problem
 and writes the working, then buries the answer in prose, which scores 3 instead
@@ -69,7 +85,8 @@ current configuration.
 budget. The model read all 12 source modules, wrote a 5 KB findings file, and
 reproduced the session code from the brief without being prompted.
 
-Five of twelve seeded defects found. The misses are consistent: it caught the
+Five of twelve seeded defects found. Across three runs the count was 5, 6 and 7
+with different misses each time. The misses are consistent in kind: it caught the
 structural problems (non-atomic write, uncapped page size, mutation during
 iteration) and missed the subtler ones (timing-safe comparison, unsigned
 timestamp, lowercase mismatch). That split is more useful than a single number --
