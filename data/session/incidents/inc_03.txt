@@ -1,0 +1,8 @@
+Incident 03: duplicate record
+
+Date: 2026-07-15
+Severity: high
+What happened: the same record appeared twice after a retry
+Symptoms in the log: connection reset
+Root cause: partially established
+Follow-up: raised the timeout

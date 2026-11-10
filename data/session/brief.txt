@@ -1,0 +1,9 @@
+BRIEF -- read this first and remember it, we return to it at the end.
+
+SESSION CODE: AXL-8411-ROWAN
+BASELINE: variant B = 673.69, latency delta -67.75%
+CLOSED HYPOTHESES (do not re-open): cache stampede, DNS failover, scheduler drift
+
+TODAY'S GOAL: review a 12-module Python service for defects.
+We look for: resource leaks, logic errors, error handling gaps, dead code.
+Collect everything you find in findings.md.

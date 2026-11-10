@@ -1,0 +1,8 @@
+Incident 04: silent auth failure
+
+Date: 2026-03-20
+Severity: low
+What happened: requests were rejected with no error in the response
+Symptoms in the log: connection reset
+Root cause: not established
+Follow-up: added a metric

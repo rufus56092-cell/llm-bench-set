@@ -1,0 +1,8 @@
+Incident 05: export truncated
+
+Date: 2026-01-02
+Severity: low
+What happened: the CSV export stopped mid-file
+Symptoms in the log: assert in handler
+Root cause: partially established
+Follow-up: raised the timeout

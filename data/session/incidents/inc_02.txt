@@ -1,0 +1,8 @@
+Incident 02: stale read after update
+
+Date: 2026-09-26
+Severity: high
+What happened: a read returned a record that had just been updated
+Symptoms in the log: TimeoutError in write
+Root cause: not established
+Follow-up: raised the timeout
