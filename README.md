@@ -103,18 +103,22 @@ GPU will slow it down.
 |---|---|
 | decode | 55.6 tok/s mean, 67.2 peak |
 | prefill | 691 tok/s mean at 55K prompt |
-| quality | 4.72 / 5 across 78 tasks |
-| longctx | 12/12 cells, verified to 101 339 tokens |
+| quality | 3.76 / 5 across 75 scored tasks |
+| longctx | 9/9 cells, verified to 64 801 tokens |
 
 Your hardware will differ. That is the point of running it.
 
 ## Credits
 
-The 78-case quality suite is adapted from
-[omar16100/llm-benchmark](https://github.com/omar16100/llm-benchmark); the
-needle-in-a-haystack idea is the standard one popularised by
-[gkamradt/LLMTest_NeedleInAHaystack](https://github.com/gkamradt/LLMTest_NeedleInAHaystack).
-The runner code, the truncation guard, the retrieval-recall test, and the
-session/memory benches are ours.
+This repo mixes two things, and it matters which is which:
 
-License: MIT.
+- **Borrowed ideas:** the 78-run quality suite is adapted from
+  [omar16100/llm-benchmark](https://github.com/omar16100/llm-benchmark) (MIT,
+  Copyright (c) 2026 Omar Shabab), and the needle-in-a-haystack idea comes from
+  [gkamradt/needle-in-a-haystack](https://github.com/gkamradt/needle-in-a-haystack)
+  (MIT, Copyright (c) 2023 Greg Kamradt). No code was copied from the latter.
+- **Ours:** the runner code, the truncation guard, the retrieval-recall test, and
+  the session/memory/totals benches.
+
+The full licence notices that MIT requires are reproduced in
+[`CREDITS.md`](CREDITS.md). License: MIT (see `LICENSE`).
